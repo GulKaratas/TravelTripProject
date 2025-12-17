@@ -139,6 +139,7 @@
     <Compile Include="Models\Class\Address.cs" />
     <Compile Include="Models\Class\Admin.cs" />
     <Compile Include="Models\Class\Blog.cs" />
+    <Compile Include="Models\Class\BlogComments.cs" />
     <Compile Include="Models\Class\Comments.cs" />
     <Compile Include="Models\Class\Contect.cs" />
     <Compile Include="Models\Class\Context.cs" />

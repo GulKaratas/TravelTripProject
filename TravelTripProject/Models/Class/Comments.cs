@@ -11,5 +11,5 @@ public class Comments
     public string Yorum { get; set; }
 
     public int BlogId { get; set; }  
-    public Blog Blog { get; set; }
+    public virtual Blog Blog { get; set; }
 }
