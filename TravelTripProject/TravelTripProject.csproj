@@ -260,6 +260,11 @@
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\BlogDetalis.cshtml" />
+    <Content Include="Views\Index\Partial1.cshtml" />
+    <Content Include="Views\Index\Partial2.cshtml" />
+    <Content Include="Views\Index\Partial3.cshtml" />
+    <Content Include="Views\Index\Partial4.cshtml" />
+    <Content Include="Views\Index\Partial5.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
