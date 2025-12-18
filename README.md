@@ -64,7 +64,7 @@ Projede **Admin giriş (Authentication)** sistemi bulunmaktadır.
 
 <p align="center">
     
-   <img src="./Images/Images/Ekran görüntüsü 2025-12-18 203158.png" alt="Image 12" width="100" />
+   <img src="./Images/Ekran görüntüsü 2025-12-18 203158.png" alt="Image 12" width="100" />
   <img src="./Images/Ekran görüntüsü 2025-12-18 203222.png" alt="Image 11" width="100" />
     <img src="./Images/Ekran görüntüsü 2025-12-18 203238.png" alt="Image 10" width="100" />
    <img src="./Images/Ekran görüntüsü 2025-12-18 203250.png" alt="Image 9" width="100" />
