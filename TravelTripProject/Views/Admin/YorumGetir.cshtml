@@ -1,0 +1,40 @@
+﻿@model TravelTripProject.Models.Class.Comments
+
+@{
+    ViewBag.Title = "YorumGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card border-0 shadow-sm p-4">
+    <h2 class="fw-bold mb-4 text-warning"><i class="fas fa-edit me-2"></i>Yorum Güncelleme Sayfası</h2>
+    <hr class="mb-4">
+
+    @using (Html.BeginForm("YorumGuncelle", "Admin", FormMethod.Post))
+    {
+        @Html.HiddenFor(x => x.Id)
+
+        <div class="row">
+            <div class="col-md-8 mb-3">
+                <label class="form-label fw-bold">Kullanıcı Adı:</label>
+                @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control rounded-pill px-3 shadow-sm" })
+            </div>
+            <div class="col-md-8 mb-3">
+                <label class="form-label fw-bold">Mail:</label>
+                @Html.TextBoxFor(x => x.Mail, new { @class = "form-control rounded-pill px-3 shadow-sm" })
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label fw-bold">Yorum</label>
+            @Html.TextAreaFor(x => x.Yorum,15,1, new { @class = "form-control rounded-3 shadow-sm", rows = "12" })
+        </div>
+
+        <div class="text-end">
+            <a href="/Admin/Index" class="btn btn-outline-secondary rounded-pill px-4 me-2">İptal</a>
+            <button class="btn btn-success rounded-pill px-5 shadow">
+                <i class="fas fa-check-circle me-2"></i>Değişiklikleri Kaydet
+            </button>
+        </div>
+    }
+</div>
+

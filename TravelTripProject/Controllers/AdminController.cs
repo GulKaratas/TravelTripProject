@@ -6,9 +6,11 @@ using System.Web.Mvc;
 using TravelTripProject.Models.Class;
 namespace TravelTripProject.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         Context c = new Context();
+        [Authorize]
         public ActionResult Index()
         {
             var degerler = c.Blogs.ToList();
@@ -54,6 +56,28 @@ namespace TravelTripProject.Controllers
         {
             var yorumlar = c.Comments.ToList();
             return View(yorumlar);
+        }
+        public ActionResult YorumSil(int id)
+        {
+            var yorum = c.Comments.Find(id);
+            c.Comments.Remove(yorum);
+            c.SaveChanges();
+            return RedirectToAction("YorumListesi");
+        }
+
+        public ActionResult YorumGetir(int id)
+        {
+            var yrm = c.Comments.Find(id);
+            return View("YorumGetir", yrm);
+        }
+        public ActionResult YorumGuncelle(Comments y)
+        {
+            var yrm = c.Comments.Find(y.Id);
+            yrm.KullaniciAdi = y.KullaniciAdi;
+            yrm.Mail = y.Mail;
+            yrm.Yorum = y.Yorum;
+            c.SaveChanges();
+            return RedirectToAction("YorumListesi");
         }
     }
 }
