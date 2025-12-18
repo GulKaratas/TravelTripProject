@@ -1,16 +1,15 @@
 ﻿@using TravelTripProject.Models.Class;
 @model List<Blog>
 
-<div class="box1-left">
+<div class="best-places-more mt-2">
     @foreach (var x in Model)
     {
-        <div class="bot-img">
-            <img src="@x.BlogImage" alt="" />
+        <div class="d-flex align-items-center mb-4 border-top pt-3">
+            <img src="@x.BlogImage" class="rounded-3 shadow-sm me-3" alt="@x.Baslik" style="width: 80px; height: 60px; object-fit: cover;">
+            <div>
+                <a href="/Blog/BlogDetalis/@x.Id" class="text-decoration-none text-dark fw-bold d-block mb-1">@x.Baslik</a>
+                <p class="small text-muted mb-0">@(x.Aciklama.Length > 50 ? x.Aciklama.Substring(0, 50) + "..." : x.Aciklama)</p>
+            </div>
         </div>
-        <div class="bot-desc1">
-            <p>@x.Aciklama.Substring(0,75)... </p>
-        </div>
-        <div class="clear"></div>
     }
-
 </div>

@@ -1,0 +1,50 @@
+﻿@model TravelTripProject.Models.Class.Blog
+@{
+    ViewBag.Title = "BlogGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card border-0 shadow-sm p-4">
+    <h2 class="fw-bold mb-4 text-warning"><i class="fas fa-edit me-2"></i>Blog Yazısını Düzenle</h2>
+    <hr class="mb-4">
+
+    @using (Html.BeginForm("BlogGuncelle", "Admin", FormMethod.Post))
+    {
+        @Html.HiddenFor(x => x.Id)
+
+        <div class="row">
+            <div class="col-md-8 mb-3">
+                <label class="form-label fw-bold">Blog Başlığı</label>
+                @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control rounded-pill px-3 shadow-sm" })
+            </div>
+            <div class="col-md-4 mb-3">
+                <label class="form-label fw-bold">Tarih</label>
+                @* Tarihi string formatında textbox içinde göstermek için *@
+                <input type="date" name="Tarih" class="form-control rounded-pill px-3 shadow-sm" value="@Model.Tarih.ToString("yyyy-MM-dd")" />
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Blog Görsel URL</label>
+            @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control rounded-pill px-3 shadow-sm" })
+            @if (!string.IsNullOrEmpty(Model.BlogImage))
+            {
+                <div class="mt-2">
+                    <img src="@Model.BlogImage" class="rounded shadow-sm" style="height: 100px;">
+                </div>
+            }
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label fw-bold">İçerik</label>
+            @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control rounded-3 shadow-sm", rows = "12" })
+        </div>
+
+        <div class="text-end">
+            <a href="/Admin/Index" class="btn btn-outline-secondary rounded-pill px-4 me-2">İptal</a>
+            <button class="btn btn-success rounded-pill px-5 shadow">
+                <i class="fas fa-check-circle me-2"></i>Değişiklikleri Kaydet
+            </button>
+        </div>
+    }
+</div>

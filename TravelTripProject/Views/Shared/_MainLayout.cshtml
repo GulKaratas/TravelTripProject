@@ -1,82 +1,118 @@
-﻿
-@{
-    Layout = null;
-}
-
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
-<html>
+﻿<!DOCTYPE html>
+<html lang="tr">
 <head>
-    <title>Free Easy-Trip Website Template | Home :: w3layouts</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="~/web/css/style.css" type="text/css" media="all" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="~/web/css/slider.css" rel="stylesheet" type="text/css" media="all" />
-    <script src="~/web/js/jquery.min.js"></script>
-    <script src="~/web/js/responsiveslides.min.js"></script>
-
-    <script>
-        // You can also use "$(window).load(function() {"
-        $(function () {
-            // Slideshow 1
-            $("#slider1").responsiveSlides({
-                auto: true,
-                nav: true,
-                speed: 500,
-                namespace: "callbacks",
-            });
-        });
-    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Tatil Seyehat</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    
+    <!-- Custom Modern CSS -->
+    <link href="~/Content/modern.css" rel="stylesheet">
+    
+    @RenderSection("head", required: false)
 </head>
 <body>
-    <div class="header">
-        <div class="wrap">
-            <div class="logo"><a href="index.html"><img src="~/web/images/logo.png" alt="" /></a></div>
-            <div class="con-right">
-                <div class="grid1-l-img">
-                    <img src="~/web/images/contact.png" alt="">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="/Index/Index/">
+                    <i class="fas fa-plane-departure me-2"></i>TATİL<span>SEYEHAT</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Index/Index/"><i class="fas fa-home me-1"></i> Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/About/Index/"><i class="fas fa-info-circle me-1"></i> Hakkımızda</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-map-marked-alt me-1"></i> Rehber
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-hotel me-2"></i> Oteller</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-utensils me-2"></i> Restorantlar</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-landmark me-2"></i> Müzeler</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Blog/Index/"><i class="fas fa-blog me-1"></i> Bloğum</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Home/Contact/"><i class="fas fa-envelope me-1"></i> İletişim</a>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <a class="btn btn-primary" href="/Admin/Index/">Admin Paneli</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="grid1-l-desc">
-                    <p>Tel : +91 00000-55555</p>
-                </div>
-                <div class="clear"></div>
             </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-    <div class="header-bottom">
-        <div class="wrap">
-            <ul id="nav">
-                <li><a href="/Index/Index/">Anasayfa</a></li>
-                <li><a class="hsubs" href="/About/Index/">Hakkımızda</a></li>
-                <li>
-                    <a class="hsubs" href="destinations.html">Rehber</a>
-                    <ul class="subs">
+        </nav>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">TATİL<span>SEYEHAT</span></h5>
+                    <p class="opacity-75">Dünyayı keşfetmek için en doğru adres. Seyahat tutkunları için özel hazırladığımız blog yazıları ve rehberlerle yanınızdayız.</p>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h6 class="fw-bold mb-3">Hızlı Linkler</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="/Index/Index/">Anasayfa</a></li>
+                        <li><a href="/About/Index/">Hakkımızda</a></li>
+                        <li><a href="/Blog/Index/">Bloğum</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h6 class="fw-bold mb-3">Kategoriler</h6>
+                    <ul class="list-unstyled">
                         <li><a href="#">Oteller</a></li>
                         <li><a href="#">Restorantlar</a></li>
-                        <li><a href="#">Müzeler</a></li>
+                        <li><a href="#">Gezilecek Yerler</a></li>
                     </ul>
-                </li>
-                <li><a class="hsubs" href="/Blog/Index/">Bloğum</a></li>
-                <li><a href="contact.html">İletişim</a></li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class"content">
-        @RenderBody()
-    </div>
-    <div class="footer-bottom">
-        <div class="wrap">
-            <div class="copy">
-                <p>&copy; 2025 Tatil Seyehat | Design by <a href="http://w3layouts.com">W3Layouts</a></p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h6 class="fw-bold mb-3">İletişim</h6>
+                    <ul class="list-unstyled opacity-75">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> İstanbul, Türkiye</li>
+                        <li><i class="fas fa-phone me-2"></i> +90 212 000 00 00</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@tatilseyahat.com</li>
+                    </ul>
+                    <div class="mt-3">
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3 fs-5"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3 border-light opacity-25">
+            <div class="text-center opacity-75">
+                <p>&copy; @DateTime.Now.Year Tatil Seyehat | Tüm Hakları Saklıdır.</p>
             </div>
         </div>
-    </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+    @RenderSection("scripts", required: false)
 </body>
 </html>

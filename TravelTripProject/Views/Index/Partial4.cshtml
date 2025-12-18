@@ -1,22 +1,19 @@
 ﻿@using TravelTripProject.Models.Class;
-
 @model List<Blog>
 
-
-<div class="padding1">
-    <h4>Our Best Places</h4>
-    <div class="box-left">
+<div class="card border-0 shadow-sm p-4">
+    <h4 class="fw-bold mb-4">En İyi Yerler</h4>
+    <div class="best-places">
         @foreach (var x in Model)
         {
-            <div class="bot-img">
-                <img src="@x.BlogImage" alt="" />
+            <div class="d-flex align-items-center mb-4">
+                <img src="@x.BlogImage" class="rounded-3 shadow-sm me-3" alt="@x.Baslik" style="width: 80px; height: 60px; object-fit: cover;">
+                <div>
+                    <a href="/Blog/BlogDetalis/@x.Id" class="text-decoration-none text-dark fw-bold d-block mb-1">@x.Baslik</a>
+                    <p class="small text-muted mb-0">@(x.Aciklama.Length > 50 ? x.Aciklama.Substring(0, 50) + "..." : x.Aciklama)</p>
+                </div>
             </div>
-            <div class="bot-desc">
-                <p>@x.Aciklama.Substring(0, 75)... </p>
-            </div>
-            <div class="clear"></div>
         }
     </div>
     @Html.Action("Partial5", "Index")
 </div>
-

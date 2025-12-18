@@ -1,0 +1,49 @@
+﻿@using TravelTripProject.Models.Class;
+@model List<Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold mb-0 text-secondary">Blog Yazıları</h2>
+    <a href="/Admin/YeniBlog/" class="btn btn-primary rounded-pill px-4">
+        <i class="fas fa-plus me-2"></i>Yeni Blog Ekle
+    </a>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover align-middle">
+        <thead class="table-light">
+            <tr>
+                <th class="ps-4">ID</th>
+                <th>Başlık</th>
+                <th class="text-center">İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td class="ps-4 fw-bold text-muted">#@x.Id</td>
+                    <td>
+                        <div class="fw-bold text-dark">@x.Baslik</div>
+                    </td>
+                    <td class="text-center">
+                        <div class="btn-group shadow-sm rounded-pill overflow-hidden">
+                            <a href="/Admin/BlogGetir/@x.Id" class="btn btn-warning btn-sm px-3" title="Düzenle">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a href="/Admin/BlogSil/@x.Id" class="btn btn-danger btn-sm px-3" title="Sil" onclick="return confirm('Bu blog yazısını silmek istediğinize emin misiniz?')">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                            <a href="/Blog/BlogDetalis/@x.Id" class="btn btn-info btn-sm px-3 text-white" title="Görüntüle" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

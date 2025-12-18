@@ -5,101 +5,68 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
-<html>
-
-<body>
-
-    <div class="header-banner">
-        <div class="wrap">
-            <div class="banner">
-                <div class="indent">
-                    <h2 class="indent-left margin-bot">Plan the Easy Trip</h2>
-                    <div class="banner-left">
-                        <div class="con-text">
-                            <div class="grid1-img">
-                                <img src="~/web/images/glass.png" alt="">
-                            </div>
-                            <div class="grid1-desc">
-                                <p>Restourantlar</p>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="con-text">
-                            <div class="grid1-img">
-                                <img src="~/web/images/flight.png" alt="">
-                            </div>
-                            <div class="grid1-desc">
-                                <p>Uçuşlar</p>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="con-text">
-                            <div class="grid1-img">
-                                <img src="~/web/images/group.png" alt="">
-                            </div>
-                            <div class="grid1-desc">
-                                <p>Yapılacah Şeyler</p>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="con-text">
-                            <div class="grid1-img">
-                                <img src="~/web/images/key.png" alt="">
-                            </div>
-                            <div class="grid1-desc">
-                                <p>Araba Kiralama</p>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="clear"></div>
+<section class="hero-section text-center mb-5">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">Maceraya Hazır Mısın?</h1>
+        <p class="lead mb-5">Dünyanın en güzel yerlerini keşfetmek, unutulmaz anılar biriktirmek için doğru yerdesin.</p>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div id="mainCarousel" class="carousel slide shadow-lg rounded-4 overflow-hidden" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        @{
+                            bool first = true;
+                            foreach (var x in Model)
+                            {
+                                <div class="carousel-item @(first ? "active" : "")">
+                                    <img src="@x.BlogImage" class="d-block w-100" alt="@x.Baslik" style="height: 450px; object-fit: cover;">
+                                    <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.5); border-radius: 10px;">
+                                        <h5>@x.Baslik</h5>
+                                        <p>@x.Tarih.ToString("dd MMMM yyyy")</p>
+                                    </div>
+                                </div>
+                                first = false;
+                            }
+                        }
                     </div>
-                   
-                        <div class="header_bottom_right_images">
-                            <div class="slider" style="width:550px; height:365px">
-                                <ul class="rslides" id="slider1">
-                                    @foreach (var x in Model)
-                                    {
-                                        <li><img src="@x.BlogImage" alt=""></li>
-                                    }
-                                    </ul>
-                            </div>
-                        </div>
-                    
-
-
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-    <div class"content">
-        <div class="wrap">
-            <div class="wrapper">
-                <div class="con-top">
-                    <h3>Tatil Seyehat Bloguma Hoşgeldiniz!</h3>
-                    <p>TravelTripProject, ASP.NET MVC ve Entity Framework kullanılarak geliştirilmiş, seyahat temalı bir blog ve içerik yönetim uygulamasıdır. Proje; blog yazılarının listelenmesi, blog detaylarının görüntülenmesi, yorumların yönetilmesi ve temel yönetim (admin) işlemlerini kapsar. MVC mimarisine uygun, katmanlı ve sürdürülebilir bir yapı hedeflenmiştir.</p>
-                </div>
-                @Html.Action("Partial1","Index")
-                <div class="grids">
-                    <div class="box1">
-                        @Html.Action("Partial3", "Index")
-                        @Html.Action("Partial4", "Index")
-                        <div class="clear"></div>
-                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Geri</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">İleri</span>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-</body>
-</html>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <h2 class="section-title">Hoşgeldiniz!</h2>
+            <div class="card mb-5 p-4 bg-light border-0">
+                <p class="lead mb-0 text-secondary">
+                    TravelTripProject, ASP.NET MVC ve Entity Framework kullanılarak geliştirilmiş, seyahat temalı bir blog ve içerik yönetim uygulamasıdır. 
+                    Maceradan maceraya koşarken yaşadıklarımızı, gördüğümüz yerleri ve tattığımız lezzetleri sizinle paylaşıyoruz.
+                </p>
+            </div>
 
-
+            <h3 class="section-title mt-5">Öne Çıkan Yerler</h3>
+            <div class="row">
+                @Html.Action("Partial1", "Index")
+            </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <aside>
+                @Html.Action("Partial3", "Index")
+                
+                <div class="mt-5">
+                    @Html.Action("Partial4", "Index")
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>

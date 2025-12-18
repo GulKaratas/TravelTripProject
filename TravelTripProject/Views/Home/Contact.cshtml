@@ -1,19 +1,102 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<main aria-labelledby="title">
-    <h2 id="title">@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
 
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
+<section class="hero-section text-center mb-5" style="padding: 60px 0;">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Bizimle İletişime Geçin</h1>
+        <p class="lead">Her türlü soru, öneri ve işbirliği için yanınızdayız.</p>
+    </div>
+</section>
 
-    <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-    </address>
-</main>
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="card border-0 shadow-sm p-4 h-100 bg-light">
+                <h4 class="fw-bold mb-4">İletişim Bilgileri</h4>
+                
+                <div class="d-flex align-items-center mb-4">
+                    <div class="bg-primary text-white p-3 rounded-circle me-3">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-0">Adres</h6>
+                        <p class="text-secondary small mb-0">İstanbul, Türkiye</p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center mb-4">
+                    <div class="bg-primary text-white p-3 rounded-circle me-3">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-0">Telefon</h6>
+                        <p class="text-secondary small mb-0">+90 212 000 00 00</p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center mb-4">
+                    <div class="bg-primary text-white p-3 rounded-circle me-3">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-0">E-posta</h6>
+                        <p class="text-secondary small mb-0">info@tatilseyahat.com</p>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <h6 class="fw-bold mb-3">Bizi Takip Edin</h6>
+                <div class="d-flex gap-3">
+                    <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm p-4 h-100">
+                <h4 class="fw-bold mb-4">Mesaj Gönderin</h4>
+                <form>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label small fw-bold text-muted">Adınız Soyadınız</label>
+                            <input type="text" class="form-control" placeholder="Ad Soyad">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label small fw-bold text-muted">E-posta Adresiniz</label>
+                            <input type="email" class="form-control" placeholder="E-posta">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold text-muted">Konu</label>
+                        <input type="text" class="form-control" placeholder="Mesaj Konusu">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label small fw-bold text-muted">Mesajınız</label>
+                        <textarea class="form-control" rows="6" placeholder="Mesajınızı buraya yazın..." style="resize: none;"></textarea>
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary px-5 rounded-pill shadow-sm">
+                            Mesajı Gönder <i class="fas fa-paper-plane ms-2"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid p-0 mt-5">
+    @* Google Maps Embed Placeholder *@
+    <div class="bg-light shadow-inner" style="height: 400px; display: flex; align-items: center; justify-content: center;">
+        <div class="text-center text-muted">
+            <i class="fas fa-map-marked-alt fa-3x mb-3"></i>
+            <h5>Google Haritalar Entegrasyonu</h5>
+            <p>Buraya harita yerleştirilebilir.</p>
+        </div>
+    </div>
+</div>
