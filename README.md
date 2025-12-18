@@ -59,34 +59,31 @@ Projede **Admin giriş (Authentication)** sistemi bulunmaktadır.
 * **Controllers**: İş mantığı ve yönlendirmeler
 * **Context**: Entity Framework DbContext yapısı
 
-
 ## 📷 Ekran Görüntüleri
 
 <p align="center">
-    
-   <img src="./Images/Ekran görüntüsü 2025-12-18 203158.png" alt="Image 12" width="100" />
-  <img src="./Images/Ekran görüntüsü 2025-12-18 203222.png" alt="Image 11" width="100" />
-    <img src="./Images/Ekran görüntüsü 2025-12-18 203238.png" alt="Image 10" width="100" />
-   <img src="./Images/Ekran görüntüsü 2025-12-18 203250.png" alt="Image 9" width="100" />
-  <img src="./Images/Ekran görüntüsü 2025-12-18 203305.png" alt="Image 8" width="100" />
-   <img src="./Images/Ekran görüntüsü 2025-12-18 203331.png" alt="Image 7" width="100" />
- 
+  <img src="./Images/Ekran görüntüsü 2025-12-18 203158.png" width="250" />
+  <img src="./Images/Ekran görüntüsü 2025-12-18 203222.png" width="250" />
+  <img src="./Images/Ekran görüntüsü 2025-12-18 203238.png" width="250" />
 </p>
 
 <p align="center">
- <img src="./Images/Ekran görüntüsü 2025-12-18 203348.png" alt="Image 6" width="100" />
-   <img src="./Images/Ekran görüntüsü 2025-12-18 203412.png" alt="Image 5" width="100" />
-   <img src="./Images/Ekran görüntüsü 2025-12-18 203439.png" alt="Image 4" width="100" />
-    <img src="./Images/Ekran görüntüsü 2025-12-18 203454.png" alt="Image 3" width="100" />
-  <img src="./Images/Ekran görüntüsü 2025-12-18 203540.png" alt="Image 2" width="100" />
-  <img src="./Images/Ekran görüntüsü 2025-12-18 203604.png" alt="Image 1" width="100" />
-  
-
- 
- 
-  
+  <img src="./Images/Ekran görüntüsü 2025-12-18 203250.png" width="250" />
+  <img src="./Images/Ekran görüntüsü 2025-12-18 203305.png" width="250" />
+  <img src="./Images/Ekran görüntüsü 2025-12-18 203331.png" width="250" />
 </p>
 
+<p align="center">
+  <img src="./Images/Ekran görüntüsü 2025-12-18 203348.png" width="250" />
+  <img src="./Images/Ekran görüntüsü 2025-12-18 203412.png" width="250" />
+  <img src="./Images/Ekran görüntüsü 2025-12-18 203439.png" width="250" />
+</p>
+
+<p align="center">
+  <img src="./Images/Ekran görüntüsü 2025-12-18 203454.png" width="250" />
+  <img src="./Images/Ekran görüntüsü 2025-12-18 203540.png" width="250" />
+  <img src="./Images/Ekran görüntüsü 2025-12-18 203604.png" width="250" />
+</p>
 
 
 ⭐ Bu projeyi beğendiysen yıldız vermeyi unutma!
