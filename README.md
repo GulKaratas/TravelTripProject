@@ -17,7 +17,7 @@ TravelTripProject; blog yazılarının listelendiği, detaylarının görüntül
 * Entity Framework (Code First)
 * SQL Server
 * Bootstrap
-* HTML / CSS
+* HTML/ CSS
 * Razor View Engine
 
 ---
